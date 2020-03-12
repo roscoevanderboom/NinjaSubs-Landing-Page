@@ -1,6 +1,7 @@
 import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { ListItemText } from "@material-ui/core";
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -29,13 +30,13 @@ export default function ProductSection() {
                             }}
                             dropdownList={[
                                 <Anchor
-                                    text='Taipei'
+                                    text={<ListItemText>Taipei</ListItemText>}
                                     href='https://ninjasubs-taipei.web.app/login-page' />,
                                 <Anchor
-                                    text='Taichung'
+                                    text={<ListItemText>Taichung</ListItemText>}
                                     href='https://ninjasubs-taichung.web.app/login-page' />,
                                 <Anchor
-                                    text='Kaoshiung'
+                                    text={<ListItemText>Kaoshiung</ListItemText>}
                                     href='https://ninjasubs-kaoshiung.web.app/login-page' />
                             ]}
                         />
@@ -50,8 +51,8 @@ export default function ProductSection() {
                             }}
                             dropdownList={[
                                 <Anchor
-                                    text='Tokyo'
-                                    href='https://ninjasubs-tokyo.web.app/login-page' />                               
+                                    text={<ListItemText>Tokyo</ListItemText>}
+                                    href='https://ninjasubs-tokyo.web.app/login-page' />
                             ]}
                         />
                     </GridItem>
