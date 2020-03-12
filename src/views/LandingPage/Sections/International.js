@@ -15,7 +15,7 @@ export default function ProductSection() {
     const classes = useStyles();
 
     return (
-        <GridContainer id="international" justify="center">
+        <GridContainer id="international" className={classes.section} justify="center">
             <GridItem xs={12} sm={12} md={8}>
                 <h2 className={classes.title}>Available Internationally</h2>
                 <h6 className={classes.description}>Choose a country, then select your city</h6>
