@@ -33,7 +33,10 @@ export default function ProductSection() {
                                     href='https://ninjasubs-taipei.web.app/login-page' />,
                                 <Anchor
                                     text='Taichung'                                    
-                                    href='https://ninjasubs-taichung.web.app/login-page' />
+                                    href='https://ninjasubs-taichung.web.app/login-page' />,
+                                <Anchor
+                                    text='Kaoshiung'                                    
+                                    href='https://ninjasubs-kaoshiung.web.app/login-page' />
                             ]}
                         />
                     </GridItem>
