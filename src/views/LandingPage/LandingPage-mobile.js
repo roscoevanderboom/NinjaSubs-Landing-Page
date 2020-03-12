@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
@@ -12,7 +10,6 @@ import Button from "components/CustomButtons/Button.js";
 import Features from "./Sections/Features";
 import TeamSection from "./Sections/TeamSection";
 import WorkSection from "./Sections/WorkSection.js";
-
 
 const backgroundImage = require("assets/img/landing-bg.jpg")
 

@@ -1,17 +1,13 @@
 import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import { ListItemText } from "@material-ui/core";
-
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import CustomDropdown from "components/CustomDropdown/CustomDropdown";
 import Anchor from 'components/Anchors';
-
+// Styles
 import styles from "assets/jss/material-kit-react/views/landingPageSections/productStyle.js";
-
-
 const useStyles = makeStyles(styles);
 
 export default function ProductSection() {
