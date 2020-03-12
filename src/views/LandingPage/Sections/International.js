@@ -32,11 +32,26 @@ export default function ProductSection() {
                                     text='Taipei'
                                     href='https://ninjasubs-taipei.web.app/login-page' />,
                                 <Anchor
-                                    text='Taichung'                                    
+                                    text='Taichung'
                                     href='https://ninjasubs-taichung.web.app/login-page' />,
                                 <Anchor
-                                    text='Kaoshiung'                                    
+                                    text='Kaoshiung'
                                     href='https://ninjasubs-kaoshiung.web.app/login-page' />
+                            ]}
+                        />
+                    </GridItem>
+                    <GridItem xs={6} md={4}>
+                        <CustomDropdown
+                            noLiPadding={false}
+                            buttonText='Japan'
+                            buttonProps={{
+                                color: 'github',
+                                size: 'lg'
+                            }}
+                            dropdownList={[
+                                <Anchor
+                                    text='Tokyo'
+                                    href='https://ninjasubs-tokyo.web.app/login-page' />                               
                             ]}
                         />
                     </GridItem>
