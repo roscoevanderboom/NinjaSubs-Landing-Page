@@ -1,11 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useState, useContext } from "react";
+import store from "../../../state";
 // Store
-import store from 'state';
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-
-// @material-ui/icons
-
+import { sendMail } from "../../../actions/mailbox";
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -13,39 +9,36 @@ import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
-
+import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles(styles);
+
+const init = {
+  name: "",
+  email: "",
+  message: ""
+};
 
 export default function WorkSection() {
   const classes = useStyles();
-  const { fb, methods } = useContext(store);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
+  const { feedback } = useContext(store);
+  const [formData, setFormData] = useState(init);
 
   const handleData = (key, value) => {
     setFormData({ ...formData, [key]: value });
-  }
+  };
 
   const handleSubmit = () => {
-    fb.mailbox.doc().set(formData)
-      .then(() => {
-        methods.feedback('success', 'Your message has been sent!');
-      })
-      .catch((err) => {
-        methods.feedback('error', err.message);
-      })
-  }
+    sendMail(formData, feedback, setFormData, init);
+  };
 
   return (
-    <div className='col-12 text-center bg-white pt-2'>
+    <div className="col-12 text-center bg-white pt-2">
       <GridContainer justify="center">
         <GridItem cs={12} sm={12} md={8}>
           <h2 className={classes.title}>{`Want to know more?`}</h2>
           <h5 className={classes.description}>
-            Send us a message and a friendly ninja will contact you as soon as possible!
+            Send us a message and a friendly ninja will contact you as soon as
+            possible!
           </h5>
           <form>
             <GridContainer>
@@ -58,7 +51,7 @@ export default function WorkSection() {
                   }}
                   inputProps={{
                     value: formData.name,
-                    onChange: (e) => handleData('name', e.target.value)
+                    onChange: e => handleData("name", e.target.value)
                   }}
                 />
               </GridItem>
@@ -71,7 +64,7 @@ export default function WorkSection() {
                   }}
                   inputProps={{
                     value: formData.email,
-                    onChange: (e) => handleData('email', e.target.value)
+                    onChange: e => handleData("email", e.target.value)
                   }}
                 />
               </GridItem>
@@ -86,13 +79,14 @@ export default function WorkSection() {
                   multiline: true,
                   rows: 5,
                   value: formData.message,
-                  onChange: (e) => handleData('message', e.target.value)
+                  onChange: e => handleData("message", e.target.value)
                 }}
               />
               <GridContainer justify="center">
                 <GridItem xs={12} sm={12} md={4} className={classes.textCenter}>
-                  <Button color="primary"
-                    onClick={handleSubmit}>Send Message</Button>
+                  <Button color="primary" onClick={handleSubmit}>
+                    Send Message
+                  </Button>
                 </GridItem>
               </GridContainer>
             </GridContainer>
