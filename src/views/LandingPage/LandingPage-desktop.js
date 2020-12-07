@@ -19,11 +19,11 @@ import ProductSection from "./Sections/ProductSection.js";
 import TeamSection from "./Sections/TeamSection.js";
 import WorkSection from "./Sections/WorkSection.js";
 
-const backgroundImage = require("assets/img/landing-bg.jpg")
+const backgroundImage = require("assets/img/landing-bg.jpg");
 
 const useStyles = makeStyles(styles);
 
-export default () => {
+const Desktop = () => {
   const classes = useStyles();
 
   return (
@@ -33,43 +33,56 @@ export default () => {
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
               <h1 className={classes.title}>
-                Where schools from around the world come to find
-                quality substitute teachers.</h1>
+                Where schools from around the world come to find quality
+                substitute teachers.
+              </h1>
               <h4>
                 {`Every teacher needs a break from time to time. But finding a suitable substitute
                 can be hard. NinjaSubs is here to facilitate that process. `}
               </h4>
               <br />
               <Button
-                className='mr-2'
+                className="mr-2"
                 color="danger"
                 size="lg"
                 href="https://www.youtube.com/channel/UCFNy9LI10k1_Q-fSR14lEfw/videos?view_as=subscriber"
                 target="_blank"
-                rel="noopener noreferrer" >
+                rel="noopener noreferrer"
+              >
                 <i className="fas fa-play" />
                 YouTube Channel
               </Button>
               <Button
                 href="#international"
-                className='ml-2'
+                className="ml-2"
                 color="info"
-                size="lg" >
+                size="lg"
+              >
                 Become a member
               </Button>
             </GridItem>
           </GridContainer>
           <div className="mt-4 pt-4">
             Photo by
-          <a href='https://unsplash.com/@aiiveny'
+            <a
+              href="https://unsplash.com/@aiiveny"
               className="text-light"
               target="_blank"
-              rel="noopener noreferrer"> Aisha Askhadova </a>
+              rel="noopener noreferrer"
+            >
+              {" "}
+              Aisha Askhadova{" "}
+            </a>
             on
-          <a href='https://unsplash.com/'
+            <a
+              href="https://unsplash.com/"
               className="text-light"
               target="_blank"
-              rel="noopener noreferrer"> Unsplash</a>
+              rel="noopener noreferrer"
+            >
+              {" "}
+              Unsplash
+            </a>
           </div>
         </div>
       </Parallax>
@@ -82,4 +95,5 @@ export default () => {
       </div>
     </React.Fragment>
   );
-}
+};
+export default Desktop;

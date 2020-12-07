@@ -1,12 +1,7 @@
 /* eslint-disable react/prop-types */
 // Services
-import React, { createContext, useReducer } from "react";
-import { useHistory } from "react-router-dom";
+import React, { createContext } from "react";
 import { useSnackbar } from "notistack";
-
-// Reducers & initial state
-import reducers from "../reducers";
-import initState from "./initialState";
 
 // Components
 import { createFeedback } from "../components/Feedback/index";
@@ -17,27 +12,15 @@ export const GlobalStatePovider = props => {
   // ********************* State ***************************
   // *******************************************************
 
-  // Router history
-  const hist = useHistory();
-  const [appState, dispatch] = useReducer(reducers, initState);
-
   // Methods for user feedback
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
-
   const feedback = (variant, message) => {
-    createFeedback(variant, message, enqueueSnackbar, closeSnackbar, hist);
+    createFeedback(variant, message, enqueueSnackbar, closeSnackbar);
   };
 
   // Create provider
   return (
-    <GlobalState.Provider
-      value={{
-        hist,
-        appState,
-        dispatch,
-        feedback
-      }}
-    >
+    <GlobalState.Provider value={{ feedback }}>
       {props.children}
     </GlobalState.Provider>
   );

@@ -5,29 +5,30 @@ import { Hidden } from "@material-ui/core";
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
 
-import LandingPageMobile from './LandingPage-mobile';
-import LandingPageDesktop from './LandingPage-desktop';
+import LandingPageMobile from "./LandingPage-mobile";
+import LandingPageDesktop from "./LandingPage-desktop";
 
-export default function LandingPage() {  
-    return (
-        <React.Fragment>
-            <Header
-                color="transparent"
-                brand="NinjaSubs"
-                fixed                
-                changeColorOnScroll={{
-                    height: 100,
-                    color: "white"
-                }} />
+export default function LandingPage() {
+  return (
+    <React.Fragment>
+      <Header
+        color="transparent"
+        brand="NinjaSubs"
+        fixed
+        changeColorOnScroll={{
+          height: 100,
+          color: "white"
+        }}
+      />
 
-            <Hidden smUp>
-                <LandingPageMobile />
-            </Hidden>
-            <Hidden only={['xs']}>
-                <LandingPageDesktop />
-            </Hidden>
+      <Hidden smUp>
+        <LandingPageMobile />
+      </Hidden>
+      <Hidden only={["xs"]}>
+        <LandingPageDesktop />
+      </Hidden>
 
-            <Footer />
-        </React.Fragment>
-    );
+      <Footer />
+    </React.Fragment>
+  );
 }

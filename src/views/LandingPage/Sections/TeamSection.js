@@ -16,15 +16,12 @@ export default function TeamSection() {
   const classes = useStyles();
 
   return (
-    <div className='col-12 text-center bg-light pt-2'>
-      <Typography
-        className={classes.title}
-        component='header'
-        variant='h4'>
+    <div className="col-12 text-center bg-light pt-2">
+      <Typography className={classes.title} component="header" variant="h4">
         Meet our team
-    </Typography>
+      </Typography>
 
-      <GridContainer justify='space-evenly'>
+      <GridContainer justify="space-evenly">
         <Roscoe />
         <Asriel />
         <Bethany />
